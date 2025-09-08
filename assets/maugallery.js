@@ -120,21 +120,29 @@
       $(`#${lightboxId}`).modal("toggle");
     },
     prevImage() {
+      console.log("prevImage appelée");
+
+      //1.trouve l'image actuellement affichée dans la lightbox
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
           activeImage = $(this);
         }
       });
+
+      //2.Identifie le filtre actif (tt les images ou une catégorie)
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
       let imagesCollection = [];
+
       if (activeTag === "all") {
+        //on prend tt les images
         $(".item-column").each(function() {
           if ($(this).children("img").length) {
             imagesCollection.push($(this).children("img"));
           }
         });
       } else {
+        //on prend uniquement les images de la catégorie active
         $(".item-column").each(function() {
           if (
             $(this)
@@ -145,28 +153,45 @@
           }
         });
       }
-      let index = 0,
-        next = null;
+
+      //3.trouver l'index de l'image active dans la collection
+      let index = 0;
+       /* next = null;*/
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i ;
         }
       });
-      next =
+
+      /*next =
         imagesCollection[index] ||
-        imagesCollection[imagesCollection.length - 1];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+        imagesCollection[imagesCollection.length - 1];*/
+
+      //4. Aller à l'image précédente (index -1)
+      //Si index == 0 (première image), on revient à la dernière (effet boucle)
+      let prevIndex = index > 0 ? index - 1 : imagesCollection.length - 1;
+      
+      //5. Mettre à jour la lightbox avec la nouvelle image
+      let prev = imagesCollection[prevIndex];
+      $(".lightboxImage").attr("src", $(prev).attr("src"));
     },
+
     nextImage() {
+      console.log("nextImage appelée");
+
+      //1.trouve l'image actuellement affichée dans la lightbox
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
           activeImage = $(this);
         }
       });
+
+      //2.Identifie le filtre actif (tt les images ou une catégorie)
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
       let imagesCollection = [];
+
       if (activeTag === "all") {
         $(".item-column").each(function() {
           if ($(this).children("img").length) {
@@ -184,17 +209,27 @@
           }
         });
       }
-      let index = 0,
-        next = null;
+
+      //3.trouver l'index de l'image active dans la collection
+      let index = 0;
+        /*next = null;*/
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
+
+      //4. Aller à l'image suivante (index +1)
+      //Si on est déjà sur la dernière image -> on repart à la première (boucle)
+      let nextIndex = index < imagesCollection.length - 1 ? index + 1 : 0;
+
+      //5.mettre à jour la lightbox avec la nouvelle image
+      /*next = imagesCollection[index] || imagesCollection[0];*/
+      let next = imagesCollection[nextIndex];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
+    
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
         lightboxId ? lightboxId : "galleryLightbox"
