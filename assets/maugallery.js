@@ -229,7 +229,7 @@
       let next = imagesCollection[nextIndex];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
-    
+
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
         lightboxId ? lightboxId : "galleryLightbox"
@@ -274,8 +274,12 @@
       if ($(this).hasClass("active-tag")) {
         return;
       }
-      $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+
+      //On enlève les classes "active et ctive-tag" de l'ancien bouton
+      $(".nav-link").removeClass("active active-tag");
+
+      //On ajoute "active" + "active-tag" au bouton cliqué
+      $(this).addClass("active active-tag");
 
       var tag = $(this).data("images-toggle");
 
