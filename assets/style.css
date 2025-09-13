@@ -90,9 +90,8 @@ body {
 	font-size: 14px;
 }
 
-#gallery {
-	/*	min-height: 100vh; */
-}
+/* Suppression d’une ancienne règle #gallery inutile pour alléger le code */
+
 .title{
 	text-align: center;
 	padding-block: 2em;
@@ -242,6 +241,25 @@ form textarea {
 input[type="submit"] {
 	background-color: #BEB45A;
 	padding: .5em 1em
+}
+
+/*******FOOTER********/
+/* Footer : ajout style pour lisibilité et cohérence visuelle (fond, bordure, centrage du texte) */
+footer {
+	background-color: #f8f8f8;
+	border-top: 1px solid #ddd;
+	text-align: center;
+	padding: 1em;
+	font-size: 14px;
+}
+
+footer a {
+	color: #000; /*Même couleur que la nav pour cohérence*/
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
 }
 
 @media all and (max-width: 1180px) {
