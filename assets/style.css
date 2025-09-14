@@ -68,9 +68,11 @@ body {
 }
 
 .picture img {
-	width: 100%;
-
+	/*width: 100%;*/
+	display: block; /* évite les espaces blancs indésirables */
+	margin: auto;   /* centre l’image dans son container */
 }
+
 #about-me {
 	flex: 2
 }
