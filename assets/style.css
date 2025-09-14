@@ -68,7 +68,7 @@ body {
 }
 
 .picture img {
-	/*width: 100%;*/
+	width: 50%;
 	display: block; /* évite les espaces blancs indésirables */
 	margin: auto;   /* centre l’image dans son container */
 }
@@ -199,9 +199,6 @@ body {
 	padding-block: 100px;
 }
 
-#contact .container {
-	display: flex;
-}
 .picture.right::before {
 	content: ' ';
 	background-color: #BEB45A;
