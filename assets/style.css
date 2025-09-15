@@ -242,35 +242,6 @@ input[type="submit"] {
 	padding: .5em 1em
 }
 
-/**** Corrections Accessibilité : Contraste (WAVE) ****/
-
-/* 1. Bouton actif (ex: "Tous") : amélioration contraste fond/texte */
-.filter button.active {
-  background-color: #D8D3A8; /* Doré clair */
-  color: #000; /* Noir pour un contraste fort */
-  font-weight: bold; /* Mise en valeur */
-}
-
-/* 2. Légendes du carrousel : fond semi-transparent pour lisibilité */
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.6); /* Fond noir semi-transparent */
-  color: #fff; /* Texte blanc pour bon contraste */
-  padding: 10px;
-  border-radius: 5px; /* Arrondi */
-}
-
-/* 3. Texte ARIA visible en vert: version accessible uniquement lecteur d’écran */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
 /*******FOOTER********/
 /* Footer : ajout style pour lisibilité et cohérence visuelle (fond, bordure, centrage du texte) */
 footer {
