@@ -154,7 +154,7 @@
         });
       }
 
-      //3.trouver l'index de l'image active dans la collection
+      //3.trouver l'index de l'image active dans la collection, suppression de 
       let index = 0;
        /* next = null;*/
 

@@ -49,7 +49,6 @@ body {
 	padding-block: 100px;
 	position: relative;
 }
-
 .picture.left::before {
 	content: ' ';
 	background-color: #E5975F;
@@ -60,7 +59,6 @@ body {
 	left: 0;
 	z-index: -1;
 }
-
 .picture {
 	flex: 1;
 	margin: 0 20px;
@@ -68,28 +66,29 @@ body {
 }
 
 .picture img {
-	width: 50%;
-	display: block; /* évite les espaces blancs indésirables */
-	margin: auto;   /* centre l’image dans son container */
+	width: 100%;
 }
-
 #about-me {
 	flex: 2
 }
 .about-me__title {
 	margin-top: 1em;
 	margin-bottom: 60px;
-	font-size: 30px;
+	font-size: 30px;	
 }
-.about-me__introduction {
-	font-family: 'Spectral';
+#about-me p.about-me__introduction {
+	font-family: 'Spectral', serif;
 	font-weight: 800;
 	font-style: italic;
-	width: 60%;
+	width: auto;	
+	font-size: 1rem;	
+	margin-bottom: 0.5em;
+	line-height: 1.2;
+	max-width: 60%;
 }
 #about-me p {
 	width: 80%;
-	font-size: 14px;
+	font-size: 14px;	
 }
 
 /* Suppression d’une ancienne règle #gallery inutile pour alléger le code */
@@ -148,7 +147,10 @@ body {
 	font-family: Spectral;
 	font-style: italic;
 	font-weight: 300;
-
+	font-size: calc(1rem + 1.2vw); 
+  	line-height: 1.2;
+  	margin-top: 0;
+ 	margin-bottom: 0.5rem;
 }
 .quote__author {
 	font-family: Spectral;
@@ -176,7 +178,6 @@ body {
 	justify-content: space-between;
 	display: flex;
 	padding : 2em 0;
-
 }
 
 .service {
@@ -190,6 +191,10 @@ body {
 	justify-content: space-between;
 	z-index: 1;
 }
+.service__price strong {
+    font-size: calc(1.275rem + 0.3vw);
+    font-weight: 500;
+}
 
 #contact {
 	margin: auto;
@@ -199,6 +204,9 @@ body {
 	padding-block: 100px;
 }
 
+#contact .container {
+	display: flex;
+}
 .picture.right::before {
 	content: ' ';
 	background-color: #BEB45A;
