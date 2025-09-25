@@ -6,6 +6,8 @@ body {
 	font-family: 'Inter';
 	font-style: normal;
 }
+
+/* -------------------- HEADER -------------------- */
 .top-header {
 	background-color: white;
 	position: sticky;
@@ -42,6 +44,7 @@ body {
 	width: 20px;
 }
 
+/* -------------------- ABOUT -------------------- */
 #about {
 	display: flex;
 	background-color: #F6D2B8;
@@ -91,6 +94,7 @@ body {
 	font-size: 14px;	
 }
 
+/* -------------------- GALLERY -------------------- */
 /* Suppression d’une ancienne règle #gallery inutile pour alléger le code */
 
 .title{
@@ -136,6 +140,7 @@ body {
 	font-size: 24px;
 }
 
+/* -------------------- QUOTE -------------------- */
 .quote {
 	font-family: 'Spectral';
 	font-style: italic;
@@ -158,6 +163,7 @@ body {
 	font-size: 22px;
 }
 
+/* -------------------- SERVICES -------------------- */
 #services {
 	margin: auto;
 	background-color: #A8D5D8 ;
@@ -196,6 +202,7 @@ body {
     font-weight: 500;
 }
 
+/* -------------------- CONTACT -------------------- */
 #contact {
 	margin: auto;
 	background-color: #D8D3A8 ;
@@ -250,7 +257,7 @@ input[type="submit"] {
 	padding: .5em 1em
 }
 
-/******* CORRECTIFS ACCESSIBILITÉ ********/
+/* -------------------- CORRECTIF ACCESSIBILITÉ -------------------- */
 /* Boutons de navigation du carrousel corrigés */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -274,7 +281,13 @@ input[type="submit"] {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708-.708L9.293 7 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
 }
 
-/*******FOOTER********/
+/* Fix des textes Previous / Next détectés par Wave */
+.carousel-control-prev .visually-hidden,
+.carousel-control-next .visually-hidden {
+  display: none !important;
+}
+
+/* -------------------- FOOTER -------------------- */
 /* Footer : ajout style pour lisibilité et cohérence visuelle (fond, bordure, centrage du texte) */
 footer {
 	background-color: #f8f8f8;
@@ -293,8 +306,7 @@ footer a:hover {
 	text-decoration: underline;
 }
 
-/******* RESPONSIVE MEDIA QUERIES ********/
-/* breakpoints */
+/* -------------------- RESPONSIVE MEDIA QUERIES -------------------- */
 @media all and (max-width: 1180px) {
 	.picture {
 		flex : 2;
