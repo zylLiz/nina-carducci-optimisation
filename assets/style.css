@@ -100,8 +100,9 @@ body {
 .gallery .nav {
 	justify-content: center;
 }
+/* Bouton actif galerie (contraste corrigé) */
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-	color: #fff;
+	color: #000;
 	background-color: #BEB45A;
 	border-radius:0 ;
 }
@@ -129,7 +130,6 @@ body {
 .mg-prev, .mg-next {
 	width: 30px;
 	height: 30px;
-	border-radius: 00%;
 	justify-content: center;
 	align-items: center;
 	display: flex;
@@ -250,6 +250,30 @@ input[type="submit"] {
 	padding: .5em 1em
 }
 
+/******* CORRECTIFS ACCESSIBILITÉ ********/
+/* Boutons de navigation du carrousel corrigés */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; /* cercle */
+  background-color: rgba(0, 0, 0, 0.6); /* fond gris foncé semi-transparent */
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Chevron gauche */
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+}
+
+/* Chevron droit */
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708-.708L9.293 7 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
 /*******FOOTER********/
 /* Footer : ajout style pour lisibilité et cohérence visuelle (fond, bordure, centrage du texte) */
 footer {
@@ -269,6 +293,8 @@ footer a:hover {
 	text-decoration: underline;
 }
 
+/******* RESPONSIVE MEDIA QUERIES ********/
+/* breakpoints */
 @media all and (max-width: 1180px) {
 	.picture {
 		flex : 2;
@@ -280,7 +306,7 @@ footer a:hover {
 		margin-top: 0;
 		margin-bottom: 1em;
 	}
-	#about-me h6, #about-me p {
+	#about-me p {
 		width: 100%;
 	}
 }
