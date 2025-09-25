@@ -214,7 +214,7 @@ body {
 #contact .container {
 	display: flex;
 }
-.picture.right::before {
+#contact .picture.right::before {
 	content: ' ';
 	background-color: #BEB45A;
 	width: 374px;
@@ -223,6 +223,12 @@ body {
 	bottom: 0;
 	right: 0;
 	z-index: -1;
+}
+
+#contact .picture img {
+  width: 100%;
+  height: auto; /* garde les proportions */
+  object-fit: contain; /* évite la déformation */
 }
 .form-container {
 	flex : 2;
